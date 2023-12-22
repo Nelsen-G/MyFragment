@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="40sp"
+    tools:context=".AboutFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="400sp"
+        android:src="@drawable/foto_binus_malam"
+        android:layout_marginBottom="20sp"
+        />
+    <!-- Photo by Nelsen 😎 -->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BINUS @Alam Sutera"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="4sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jl. Jalur Sutera Barat Kav. 21, Alam Sutera, Tangerang 021 – 2977 9100"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        android:layout_marginBottom="4sp"/>
+
+</LinearLayout>
