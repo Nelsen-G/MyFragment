@@ -43,13 +43,12 @@ public class DBHelper extends SQLiteOpenHelper {
     public List<Account> getAllData() {
         List<Account> accountList = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
-        String[] columns = {"nama", "email", "password"};
-        Cursor cursor = db.query("user_data", columns, null, null, null, null, null);
+        Cursor cursor = db.rawQuery("SELECT * FROM user_data", null);
 
         while (cursor.moveToNext()) {
-            String nama = cursor.getString(cursor.getColumnIndex("nama"));
-            String email = cursor.getString(cursor.getColumnIndex("email"));
-            String password = cursor.getString(cursor.getColumnIndex("password"));
+            String nama = cursor.getString(0);
+            String email = cursor.getString(1);
+            String password = cursor.getString(2);
             accountList.add(new Account(nama, email, password));
         }
 
