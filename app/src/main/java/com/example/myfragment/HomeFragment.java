@@ -71,12 +71,14 @@ public class HomeFragment extends Fragment {
 //    private RecyclerViewAdapter rvAdapter;
     private DBHelper dbHelper;
 
+
+    private Fragment listFragment;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-
+        listFragment = new ListFragment();
         editTextNama = view.findViewById(R.id.editTextNama);
         editTextEmail = view.findViewById(R.id.editTextEmail);
         editTextPassword = view.findViewById(R.id.editTextPassword);
@@ -119,13 +121,15 @@ public class HomeFragment extends Fragment {
 
         return view;
     }
+
+
     private void loadData() {
 //        accountList.clear();
 //        accountList.addAll(dbHelper.getAllData());
 //        rvAdapter.notifyDataSetChanged();
 
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-        transaction.replace(R.id.sub_fragment_container, new ListFragment());
+        transaction.replace(R.id.sub_fragment_container, listFragment);
         transaction.commit();
 
     }
